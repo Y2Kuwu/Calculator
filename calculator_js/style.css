@@ -1,0 +1,22 @@
+#display{
+    
+    width: 108px;
+    height: 40px;
+    background-color: rgb(160, 188, 175);
+    outline-width: 4px;
+    outline-style: solid;
+    outline-color: black;
+    
+}
+#c{
+   width: 11%;
+    color: red;
+  
+}
+.full{
+    background-color: gray;
+    height: 190px;
+    width: 120px;
+    margin-top: -180px;
+    
+}

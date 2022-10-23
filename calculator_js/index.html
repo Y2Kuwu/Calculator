@@ -4,52 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script defer src="calculator.js"></script>
     <title>calculator</title>
 </head>
 <body>
-   
-       
+        <div class="full">
+         <div class = "screen"><div class = "screen-inner"></div>
+          <div previousNum class = "previous"></div>
+          <div op class = "oper"></div>
+          <div currentNum class ="current"></div>
+        </div>
+         <div class="btns">
         <table>
-            <p id = "screen"> </p>
             <tr>
-              <td><button class ="symbols" value = "c">c</button></td>
-              <td><button class ="symbols" value ="-">-</button></td>
-              <td><button class ="symbols" value ="-|+">-|+</button></td>
-              <td><button class ="symbols" value ="÷">÷</button></td>
-             
+              <td><button class ="symbols"id = "clear">c</button></td>
+              <!-- <td><button class ="symbols" value ="-" id = "">-</button></td>
+              <td><button class ="symbols" value ="|">|</button></td> -->
+              <td><button id = "question"></button></td>
+              <td></td>
+              <td><button class ="symbols" id = "divide">÷</button></td>
             </tr>
             <tr>
-              <td><button class ="numbers" value="7">7</button></td>
-              <td><button class ="numbers" value="8">8</button></td>
-              <td><button class ="numbers" value="9">9</button></td>
-              <td><button class ="symbols" value ="x">x</button></td>
+              <td><button class ="numbers">7</button></td>
+              <td><button class ="numbers">8</button></td>
+              <td><button class ="numbers">9</button></td>
+              <td><button class ="symbols"id = "multiply" >x</button></td>
              </tr>
 
              <tr>
-              <td><button class ="numbers" value="4">4</button></td>
-              <td><button class ="numbers" value="5">5</button></td>
-              <td><button class ="numbers" value="6">6</button></td>
-              <td><button class ="symbols" value ="-">-</button></td>
+              <td><button class ="numbers">4</button></td>
+              <td><button class ="numbers">5</button></td>
+              <td><button class ="numbers">6</button></td>
+              <td><button class ="symbols"id = subtract>-</button></td>
             </tr>
 
             <tr>
-              <td><button class ="numbers" value="1">1</button></td>
-              <td><button class ="numbers" value="2">2</button></td>
-              <td><button class ="numbers" value="3">3</button></td>
-              <td><button class ="symbols" value ="+">+</button></td>
+              <td><button class ="numbers">1</button></td>
+              <td><button class ="numbers">2</button></td>
+              <td><button class ="numbers">3</button></td>
+              <td><button symbols class ="symbols">+</button></td>
             </tr>
               
 
             <tr>
-              <td><button class ="numbers" value="0">0</button></td>
-              <td><button class ="symbols" value =".">.</button></td>
-              <td><button class ="symbols" value ="bk">bk</button></td>
-              <td><button class  ="symbols" value ="=">=</button></td>
+              <td><button class ="numbers">0</button></td>
+              <td><button symbols class ="symbols"id = "dec">.</button></td>
+              <td><button class ="symbols" id = "bk">b</button></td>
+              <td><button class  ="symbols"id = "equal">=</button></td>
             </tr>
-
-            
           </table>
-
-
-
+        </div>
+      </div>
+        </body>
+      </html>

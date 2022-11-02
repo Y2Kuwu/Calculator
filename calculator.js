@@ -7,19 +7,23 @@ class Calc{
     }
     
 clear(){
+    console.log("clear")
     this.previ = '';
     this.curre = '';
     this.op = undefined;
 }
 del(){
+    console.log("del")
     this.curre = this.curre.toString().slice(0, -1);
 }
 append(num){
+    console.log("append")
     if (num === "." && this.curre.includes(".")) return 
     this.curre = this.curre.toString() + num.toString()
 }
 operate(op){
-if (this.curre !== '') return
+    console.log("operate")
+if (this.curre === '') return
 if (this.previ !== '') {
     this.comp();
   }
@@ -29,6 +33,7 @@ if (this.previ !== '') {
 }
 
 comp(){
+    console.log("Comp")
     let outcome;
     const previous = parseFloat(this.previ);
     const current = parseFloat(this.curre);
@@ -46,7 +51,7 @@ comp(){
         case '÷':
             outcome = previous / current;
             break;
-        // case 'c':
+        
         //     calc.clear();
         //     calc.dis();
         // case 'bk':
@@ -62,6 +67,7 @@ comp(){
     }
 
 disCurrNum(num){
+    console.log("disCurrNum")
     const strNum = num.toString();
     const intNum = parseFloat(strNum.split('.')[0]);
     const decNum = strNum.split('.')[1];
@@ -81,18 +87,31 @@ disCurrNum(num){
     }
 
     upDis(){
+        console.log("updis")
         this.curr.innerText = 
         this.disCurrNum(this.curre);
         if (this.op != null){
         this.prev.innerText = 
         `${this.disCurrNum(this.previ)} ${this.op}`
+        
+        console.log(this.prev.innerText)
         }
         else{
             this.prev.innerText = '';
         }
     }
+    question(){
+       this.curr.innerText = "I love you"
+       q.innerText =":)"
+       nums.forEach(btn=>{
+        btn.innerText = ":)"
+       })
+       syms.forEach(btn=>{
+        btn.innerText = ":)"
+       })
+    }
 }
-
+   
 
 const readOut = document.getElementById('screen');
 const syms = document.querySelectorAll('.symbols');
@@ -103,14 +122,9 @@ const nums = document.querySelectorAll(".numbers");
 const op = document.querySelector('[op]');
 const prev = document.querySelector('[previousNum]');
 const curr= document.querySelector('[currentNum]');
-
+const q = document.getElementById('question')
 
 const calc = new Calc(prev, curr);
-
-// const num = nums.values;
-// const op = syms;
-// const equals = syms[11]//Calc.equals(syms[sidx].value == '=');
-// const del= syms[10];
 
 nums.forEach(btn =>{
     btn.addEventListener('click', ()=>{
@@ -128,15 +142,18 @@ syms.forEach(btn =>{
     })
 })
 
-
-
 //9or8    0or1    8or7
 //==
 eq.addEventListener("click", btn =>{
-    calc.operate(btn.innerText)
+   // calc.operate(btn.innerText)
 calc.comp();
 calc.upDis();
 })
+q.addEventListener("click", btn=>{
+    calc.clear();
+    calc.question();
+})
+
 c.addEventListener('click', btn => {
     calc.operate(btn.innerText)
     calc.clear()
